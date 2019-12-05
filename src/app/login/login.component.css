@@ -1,0 +1,13 @@
+.loginBtn{
+    background-color: wheat !important;
+}
+.signUp{
+    color: brown;
+    text-decoration: none;
+    margin-top: 30px !important;
+}
+.form-control:focus{
+      border-color: wheat;
+      box-shadow: 4px 8px 4px 4px wheat;
+      outline: 8px wheat;
+       -webkit-box-shadow: none;}

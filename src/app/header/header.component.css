@@ -1,0 +1,21 @@
+.dropdown-toggle{
+    cursor: pointer;
+}
+
+a{
+    cursor: pointer;
+}
+
+.nvbar{
+    background-color: wheat !important;
+}
+.nav-link{
+    font-size: 18px;
+}
+.badge{
+    background-color: brown;
+    color: wheat;
+}
+/* .nvbar a:hover {
+    border-bottom: 3px solid red;
+  } */

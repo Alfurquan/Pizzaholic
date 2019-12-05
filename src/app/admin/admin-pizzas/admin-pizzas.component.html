@@ -1,0 +1,19 @@
+<p>
+  <a routerLink="/admin/pizza/new" class="btn addBtn">Add New Pizza</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of pizzas$ | async">
+            <td>{{ p.title }}</td>
+            <td>{{ p.price | currency:' Rs ':true }}</td>
+            <td><a [routerLink]="['/admin/pizza/',p.key]">Edit</a></td>
+        </tr>
+    </tbody>
+</table>

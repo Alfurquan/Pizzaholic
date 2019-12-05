@@ -1,0 +1,16 @@
+.card-footer{
+    padding: 0 !important;
+}
+.card{
+    margin-bottom: 30px;
+}
+.cartBtn{
+    background-color: wheat;
+    color: brown;
+    border: none;
+    outline: none;
+}
+.cartBtn:focus{
+    outline: none;
+}
+

@@ -1,0 +1,41 @@
+<h1 class="display-4 text-center">Cart</h1>
+<ng-container *ngIf="cart$ | async as cart;else a">
+  <p>
+      You have {{ shoppingCartItemCount }} items in your cart
+ </p>
+ <table class="table">
+     <thead>
+         <tr><th></th>
+             <th>Pizza</th>
+             <th class="text-center" style="width: 230px;">Quantity</th>
+             <th class="text-right" style="width: 100px;">Price</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let pizzaId of getPizzaIds()">
+             <td>
+                 <!-- <img src="{{cart.items[pizzaId].pizza.imageUrl}}" class="thumbnail"> -->
+                 <div class="thumbnail" [ngStyle]="{backgroundImage: 'url(' + cart.items[pizzaId].pizza.imageUrl + ')'}"></div>
+             </td>
+             <td>{{ cart.items[pizzaId].pizza.title }}</td>
+             <td class="text-center">{{ cart.items[pizzaId].quantity }}</td>
+             <td class="text-right">
+                 {{ cart.items[pizzaId].pizza.price * cart.items[pizzaId].quantity | currency : " Rs " : true}}
+             </td>
+         </tr>
+     </tbody>
+     <tfoot>
+         <tr>
+             <th></th>
+             <th></th>
+             <th class="text-right">{{ getTotalPrice() | currency : " Rs " : true}}</th>
+         </tr>
+     </tfoot>
+ </table>
+ <a routerLink="/check-out"class="btn placeBtn">Check Out</a>
+</ng-container>
+<ng-template #a>
+    <img src="../../assets/img/emptycart.jpg" width="250px" height="200px;" class="center">
+    <p style="margin-top:10px;" class="text-center">Looks like you have not added anything to the cart</p>
+</ng-template>
+

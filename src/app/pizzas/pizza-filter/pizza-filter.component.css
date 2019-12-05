@@ -1,0 +1,12 @@
+.sticky-top{
+    top: 80px;
+}
+.active{
+    background-color: wheat;
+    color: brown;
+    border: none;
+        
+}
+.active:focus{
+    outline: 0;
+}
